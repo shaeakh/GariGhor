@@ -27,17 +27,29 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          cache: "npm"
-          cache-dependency-path: project/package-lock.json
+          node-version: "22"
+
+      - name: Detect project path
+        id: detect
+        run: |
+          if [ -f "package.json" ]; then
+            echo "dir=." >> $GITHUB_OUTPUT
+            echo "out_path=./out" >> $GITHUB_OUTPUT
+          elif [ -f "project/package.json" ]; then
+            echo "dir=project" >> $GITHUB_OUTPUT
+            echo "out_path=./project/out" >> $GITHUB_OUTPUT
+          else
+            echo "dir=." >> $GITHUB_OUTPUT
+            echo "out_path=./out" >> $GITHUB_OUTPUT
+          fi
 
       - name: Install dependencies
-        run: npm ci
-        working-directory: project
+        run: npm ci || npm install
+        working-directory: ${{ steps.detect.outputs.dir }}
 
       - name: Build static site
         run: npm run build
-        working-directory: project
+        working-directory: ${{ steps.detect.outputs.dir }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -45,7 +57,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./project/out
+          path: ${{ steps.detect.outputs.out_path }}
 
       - name: Deploy to GitHub Pages
         id: deployment
