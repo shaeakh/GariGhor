@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { TRANSLATIONS } from "@/lib/garighor-config";
+import { TRANSLATIONS, getImageUrl } from "@/lib/garighor-config";
 import { Sparkles, ArrowDownRight } from "lucide-react";
 
 interface HeroProps {
@@ -10,11 +10,13 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ lang, translations }) => {
   const t = translations || TRANSLATIONS[lang];
+  const heroBg = getImageUrl("/assets/images/backgrounds/hero_bg.png");
 
   return (
     <section
       id="top"
-      className="relative overflow-hidden bg-[url('/assets/images/backgrounds/hero_bg.png')] bg-cover bg-center py-20 lg:py-28"
+      className="relative overflow-hidden bg-cover bg-center py-20 lg:py-28"
+      style={{ backgroundImage: `url('${heroBg}')` }}
     >
       {/* Background Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-brand-hero-overlay-start via-brand-hero-overlay-mid to-brand-hero-overlay-end" />

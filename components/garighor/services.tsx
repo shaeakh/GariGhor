@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { SERVICES_DATA, TRANSLATIONS, ServiceItem } from "@/lib/garighor-config";
+import { SERVICES_DATA, TRANSLATIONS, ServiceItem, getImageUrl } from "@/lib/garighor-config";
 import { Button } from "@/components/ui/button";
 import { Check, ShoppingBag, Car } from "lucide-react";
 
@@ -63,7 +63,7 @@ export const Services: React.FC<ServicesProps> = ({
                 >
                   <div className="relative h-48 w-full overflow-hidden bg-brand-orange-100/30">
                     <Image
-                      src={service.image}
+                      src={getImageUrl(service.image)}
                       alt={service.altText || service.titles[lang]}
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-105"

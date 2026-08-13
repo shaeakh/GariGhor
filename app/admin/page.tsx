@@ -57,8 +57,8 @@ export default function AdminDashboardPage() {
 
   // GitHub Config State
   const [ghConfig, setGhConfig] = useState<GitHubConfig>({
-    owner: "",
-    repo: "",
+    owner: "shaeakh",
+    repo: "GariGhor",
     token: "",
     branch: "main",
   });
@@ -98,11 +98,14 @@ export default function AdminDashboardPage() {
         const savedGh = localStorage.getItem("garighor_github_config");
         if (savedGh) {
           const parsedGh = JSON.parse(savedGh);
-          setGhConfig(parsedGh);
+          setGhConfig((prev) => ({
+            ...prev,
+            ...parsedGh,
+          }));
         }
       } catch (e) {}
 
-      // Try reading settings from local API route or default fallback
+      // Try reading settings from raw GitHub or local API route
       try {
         const settingsRes = await fetch("/api/settings");
         if (settingsRes.ok) {
@@ -110,9 +113,20 @@ export default function AdminDashboardPage() {
           if (settingsData.config) setConfig(settingsData.config);
           if (settingsData.services) setServices(settingsData.services);
           if (settingsData.translations) setTranslations(settingsData.translations);
+        } else {
+          throw new Error("No local API");
         }
       } catch (e) {
-        // Use static defaults
+        // Fallback for static GitHub Pages export: fetch latest raw settings.json
+        const rawUrl = `https://raw.githubusercontent.com/shaeakh/GariGhor/main/data/settings.json?t=${Date.now()}`;
+        fetch(rawUrl)
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.config) setConfig(data.config);
+            if (data.services) setServices(data.services);
+            if (data.translations) setTranslations(data.translations);
+          })
+          .catch(() => {});
       } finally {
         setLoading(false);
       }
@@ -147,8 +161,8 @@ export default function AdminDashboardPage() {
   };
 
   const handleTestGithub = async () => {
-    if (!ghConfig.owner || !ghConfig.repo) {
-      setMessage({ type: "error", text: "Please enter GitHub Owner and Repository name." });
+    if (!ghConfig.owner || !ghConfig.repo || !ghConfig.token) {
+      setMessage({ type: "error", text: "Please enter GitHub Owner, Repo, and Personal Access Token (PAT)." });
       return;
     }
 
@@ -199,7 +213,10 @@ export default function AdminDashboardPage() {
         );
         committedToGithub = true;
       } catch (err: any) {
-        setMessage({ type: "error", text: `GitHub API Commit Error: ${err.message}` });
+        setMessage({
+          type: "error",
+          text: `GitHub API Commit Error: ${err.message}. Please verify your GitHub PAT token in the 'GitHub Sync' tab.`,
+        });
         setSaving(false);
         return;
       }
@@ -228,7 +245,7 @@ export default function AdminDashboardPage() {
     if (committedToGithub) {
       setMessage({
         type: "success",
-        text: "Committed changes directly to GitHub repository! GitHub Pages will redeploy shortly.",
+        text: "Committed changes directly to GitHub repository! Your website updates will reflect live immediately.",
       });
     } else if (savedToLocalApi) {
       setMessage({
@@ -237,8 +254,8 @@ export default function AdminDashboardPage() {
       });
     } else {
       setMessage({
-        type: "success",
-        text: "Settings saved in browser session! (Configure GitHub API Token in 'GitHub Sync' tab to commit directly to GitHub repository).",
+        type: "error",
+        text: "Please configure your GitHub Personal Access Token in the 'GitHub Sync' tab to enable live website updates on github.io!",
       });
     }
 
@@ -716,7 +733,7 @@ export default function AdminDashboardPage() {
                 <h2 className="text-lg">GitHub REST API Integration (for github.io)</h2>
               </div>
               <p className="text-xs text-brand-muted mb-6 leading-relaxed">
-                Provide your GitHub repository details and Personal Access Token (PAT). When configured, clicking <strong>"Save All Changes"</strong> will commit updated <code className="bg-brand-orange-50 px-1 py-0.5 rounded text-brand-orange-600">data/settings.json</code> directly to your GitHub repository, triggering GitHub Pages to redeploy automatically!
+                Provide your GitHub <strong>Personal Access Token (PAT)</strong> below. When configured, clicking <strong>"Save All Changes"</strong> will commit updated <code className="bg-brand-orange-50 px-1 py-0.5 rounded text-brand-orange-600">data/settings.json</code> directly to your GitHub repository, updating your live website immediately!
               </p>
 
               <div className="space-y-4">
@@ -727,7 +744,7 @@ export default function AdminDashboardPage() {
                     </label>
                     <input
                       type="text"
-                      placeholder="e.g. jahin-dev"
+                      placeholder="e.g. shaeakh"
                       value={ghConfig.owner}
                       onChange={(e) => setGhConfig({ ...ghConfig, owner: e.target.value })}
                       className="w-full rounded-lg border border-brand-line bg-brand-bg px-3 py-2 text-sm text-brand-ink outline-none focus:border-brand-orange-500"
@@ -740,7 +757,7 @@ export default function AdminDashboardPage() {
                     </label>
                     <input
                       type="text"
-                      placeholder="e.g. project"
+                      placeholder="e.g. GariGhor"
                       value={ghConfig.repo}
                       onChange={(e) => setGhConfig({ ...ghConfig, repo: e.target.value })}
                       className="w-full rounded-lg border border-brand-line bg-brand-bg px-3 py-2 text-sm text-brand-ink outline-none focus:border-brand-orange-500"
@@ -760,6 +777,9 @@ export default function AdminDashboardPage() {
                       onChange={(e) => setGhConfig({ ...ghConfig, token: e.target.value })}
                       className="w-full rounded-lg border border-brand-line bg-brand-bg px-3 py-2 text-sm text-brand-ink outline-none focus:border-brand-orange-500"
                     />
+                    <p className="mt-1 text-[11px] text-brand-muted">
+                      Generate at GitHub: Settings $\rightarrow$ Developer settings $\rightarrow$ Personal access tokens $\rightarrow$ Tokens (classic) with <strong>repo</strong> scope.
+                    </p>
                   </div>
 
                   <div>

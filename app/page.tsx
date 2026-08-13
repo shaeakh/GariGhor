@@ -49,16 +49,30 @@ export default function Home() {
       // Ignore storage errors
     }
 
-    // Try fetching dynamic settings from API route if running in Node environment
+    // Try fetching dynamic settings from API route (local) or Raw GitHub URL (github.io)
     fetch("/api/settings")
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error("No local API route");
+        return res.json();
+      })
       .then((data) => {
         if (data.config) setConfig(data.config);
         if (data.services) setServices(data.services);
         if (data.translations) setTranslations(data.translations);
       })
       .catch(() => {
-        // Static export fallback
+        // Fallback for static GitHub Pages export: fetch latest raw settings.json directly from GitHub repository
+        const rawUrl = `https://raw.githubusercontent.com/shaeakh/GariGhor/main/data/settings.json?t=${Date.now()}`;
+        fetch(rawUrl)
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.config) setConfig(data.config);
+            if (data.services) setServices(data.services);
+            if (data.translations) setTranslations(data.translations);
+          })
+          .catch(() => {
+            // Bundle fallback
+          });
       });
   }, [services.length]);
 

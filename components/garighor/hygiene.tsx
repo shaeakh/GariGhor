@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { TRANSLATIONS } from "@/lib/garighor-config";
+import { TRANSLATIONS, getImageUrl } from "@/lib/garighor-config";
 import { ShieldCheck, Check } from "lucide-react";
 
 interface HygieneProps {
@@ -10,11 +10,15 @@ interface HygieneProps {
 
 export const Hygiene: React.FC<HygieneProps> = ({ lang, translations }) => {
   const t = translations || TRANSLATIONS[lang];
+  const hygieneBg = getImageUrl("/assets/images/backgrounds/hygiene_bg.png");
 
   return (
     <section className="py-16 sm:py-24 bg-brand-bg border-t border-brand-line">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl border border-brand-line bg-[url('/assets/images/backgrounds/hygiene_bg.png')] bg-cover bg-center shadow-lg">
+        <div
+          className="relative overflow-hidden rounded-2xl border border-brand-line bg-cover bg-center shadow-lg"
+          style={{ backgroundImage: `url('${hygieneBg}')` }}
+        >
           <div className="bg-gradient-to-br from-brand-hygiene-overlay-start to-brand-hygiene-overlay-end p-8 sm:p-12 lg:p-16">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-6">
