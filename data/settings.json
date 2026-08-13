@@ -1,0 +1,233 @@
+{
+  "auth": {
+    "username": "admin",
+    "password": "password"
+  },
+  "config": {
+    "whatsappNumber": "+8801813096397",
+    "displayPhone": "+880 1813-096397",
+    "serviceArea": "Dhaka / Nearby Areas",
+    "brandName": "KariGhor",
+    "defaultLanguage": "en",
+    "whatsappTemplateEn": "Hello GariGhor, I want to book {service} car wash service. Price: {price}. Please confirm availability.",
+    "whatsappTemplateBn": "হ্যালো গাড়িঘর, আমি {service} কার ওয়াশ সার্ভিস বুক করতে চাই। সার্ভিস চার্জ: {price}। দয়া করে বুকিং নিশ্চিত করুন।"
+  },
+  "services": [
+    {
+      "id": "sedan",
+      "image": "/assets/images/services/sedan.png",
+      "price": "৳650",
+      "titles": {
+        "en": "Sedan",
+        "bn": "সেডান"
+      },
+      "examples": {
+        "en": "Axio / Allion / Premio / Sunny",
+        "bn": "এক্সিও / অ্যালিয়ন / প্রিমিও / সানি"
+      },
+      "altText": "White sedan being cleaned with foam wash"
+    },
+    {
+      "id": "premium_sedan",
+      "image": "/assets/images/services/premium_sedan.png",
+      "price": "৳1150",
+      "titles": {
+        "en": "Premium Sedan",
+        "bn": "প্রিমিয়াম সেডান"
+      },
+      "examples": {
+        "en": "Mercedes-Benz Sedan / BMW Sedan / Jaguar Sedan / Audi Sedan / Lexus Sedan",
+        "bn": "মার্সিডিজ-বেঞ্জ সেডান / বিএমডাব্লিউ সেডান / জাগুয়ার সেডান / অডি সেডান / লেক্সাস সেডান"
+      },
+      "altText": "Premium luxury sedan being detailed with foam wash"
+    },
+    {
+      "id": "sub_compact_suv",
+      "image": "/assets/images/services/sub_compact_suv.png",
+      "price": "৳850",
+      "titles": {
+        "en": "Sub-Compact SUV",
+        "bn": "সাব-কম্প্যাক্ট এসইউভি"
+      },
+      "examples": {
+        "en": "Noah / CH-R / Rush",
+        "bn": "নোহ / সিএইচ-আর / রাশ"
+      },
+      "altText": "Car exterior receiving a detailed wash"
+    },
+    {
+      "id": "suv_micro",
+      "image": "/assets/images/services/suv_micro.png",
+      "price": "৳1150",
+      "titles": {
+        "en": "SUV/Micro",
+        "bn": "এসইউভি/মাইক্রো"
+      },
+      "examples": {
+        "en": "Harrier / X-Trail / CR-V",
+        "bn": "হ্যারিয়ার / এক্স-ট্রেইল / সিআর-ভি"
+      },
+      "altText": "SUV exterior detail with water droplets"
+    },
+    {
+      "id": "board_nose",
+      "image": "/assets/images/services/board_nose.png",
+      "price": "৳1350",
+      "titles": {
+        "en": "Board-Nose",
+        "bn": "বোর্ড-নোজ"
+      },
+      "examples": {
+        "en": "Hiace / Microbus",
+        "bn": "হাইএস / মাইক্রোবাস"
+      },
+      "altText": "Larger vehicle parked after exterior wash"
+    },
+    {
+      "id": "jeep_prado",
+      "image": "/assets/images/services/jeep_prado.png",
+      "price": "৳1200",
+      "titles": {
+        "en": "Jeep/Prado/Range Rover",
+        "bn": "জিপ/প্রাদো/রেঞ্জ রোভার"
+      },
+      "examples": {
+        "en": "Prado / Range Rover / Jeep",
+        "bn": "প্রাদো / রেঞ্জ রোভার / জিপ"
+      },
+      "altText": "Premium vehicle exterior ready for detailing"
+    }
+  ],
+  "translations": {
+    "en": {
+      "nav-services": "Services",
+      "nav-order": "Order",
+      "nav-faq": "FAQ",
+      "hero-eyebrow": "Doorstep exterior foam wash",
+      "hero-title": "Premium Car Wash at Your Doorstep",
+      "hero-copy": "GariGhor brings expert exterior foam wash service directly to your home.",
+      "hero-btn": "Book Car Wash",
+      "hero-note": "Fast arrival • Expert service • At-home convenience",
+      "services-eyebrow": "Car Exterior Wash Service",
+      "services-title": "Choose your vehicle category",
+      "services-copy": "Select the closest match for your vehicle. The order summary will stay ready while you review the details.",
+      "summary-eyebrow": "Order summary",
+      "summary-title-ready": "Ready when you are",
+      "summary-title-selected": "Your selection",
+      "summary-no-selection": "No service selected",
+      "summary-select-wash": "Select a wash",
+      "summary-place-order": "Place Order",
+      "overview-title": "Clear service details before you book",
+      "overview-inc-title": "What's Included?",
+      "overview-inc-1": "Full Exterior deep cleaning with Car Exterior Foam Wash",
+      "overview-inc-2": "Professional service from Experts",
+      "overview-inc-3": "Easy time and completion on time",
+      "overview-inc-4": "At Home Service: Our team will go to customer's location",
+      "overview-exc-title": "What's Excluded?",
+      "overview-exc-1": "Spare component or material, if used",
+      "overview-exc-2": "Toll cost, if applicable",
+      "overview-exc-3": "Transportation, if applicable",
+      "overview-exc-4": "Depending on vehicle type and model, price may vary slightly",
+      "overview-exp-title": "What to Expect",
+      "overview-exp-1": "Trusted & Reliable Vehicle Detailing Experts",
+      "overview-exp-2": "On-time Car Care Service Delivery",
+      "overview-keep-title": "Keep in Mind",
+      "overview-keep-desc": "Water & Electricity Supply needs to be ensured by the Customer.",
+      "steps-eyebrow": "How to order",
+      "steps-title": "Book your wash in three simple steps",
+      "order-step1-title": "1. Select service",
+      "order-step1-desc": "From the category, select the service you are looking for.",
+      "order-step2-title": "2. Book your schedule",
+      "order-step2-desc": "Select your convenient time slot.",
+      "order-step3-title": "3. Place order",
+      "order-step3-desc": "Confirm your order by clicking \"Place Order\".",
+      "hygiene-eyebrow": "Health & hygiene precautions",
+      "hygiene-title": "Prepared to protect your health",
+      "hygiene-desc": "We are well-equipped and well-prepared to protect your health and hygiene while serving you. Our preparations include:",
+      "hygiene-item-1": "Ensuring health condition of service specialist",
+      "hygiene-item-2": "Ensuring use of masks, hand sanitizers, gloves, etc.",
+      "hygiene-item-3": "Disinfecting equipment before and after the work",
+      "hygiene-item-4": "Maintaining social distancing",
+      "faq-eyebrow": "FAQ",
+      "faq-title": "Questions customers ask before booking",
+      "faq-q-1": "Do I need to buy spare parts?",
+      "faq-a-1": "Actually no. But if any spare parts are required, the technician can buy them for the service. You also have the flexibility to purchase spare parts on your own. In that case, you only need to pay the service fee to the technician.",
+      "faq-q-2": "How long does it take for the technician to arrive at home?",
+      "faq-a-2": "Usually, we take around 30 minutes.",
+      "footer-desc": "Doorstep car wash service",
+      "footer-area": "Service area: Dhaka / Nearby Areas",
+      "footer-rights": "GariGhor. All rights reserved.",
+      "label-selected": "Selected",
+      "btn-add": "Add",
+      "btn-added": "Added",
+      "theme-toggle-dark": "Dark",
+      "theme-toggle-light": "Light",
+      "mobile-selected-service": "Selected service"
+    },
+    "bn": {
+      "nav-services": "সার্ভিসসমূহ",
+      "nav-order": "অর্ডার করুন",
+      "nav-faq": "প্রশ্নোত্তর",
+      "hero-eyebrow": "আপনার দোরগোড়ায় এক্সটেরিয়র ফোম ওয়াশ",
+      "hero-title": "আপনার দোরগোড়ায় প্রিমিয়াম কার ওয়াশ",
+      "hero-copy": "গাড়িঘর আপনার গাড়ির জন্য প্রফেশনাল এক্সটেরিয়র ফোম ওয়াশ সার্ভিস নিয়ে সরাসরি চলে আসবে আপনার বাসায়।",
+      "hero-btn": "কার ওয়াশ বুক করুন",
+      "hero-note": "অন-টাইম সার্ভিস • অভিজ্ঞ টেকনিশিয়ান • ঝামেলামুক্ত সেবা",
+      "services-eyebrow": "কার এক্সটেরিয়র ওয়াশ",
+      "services-title": "আপনার গাড়ির ক্যাটাগরি বেছে নিন",
+      "services-copy": "আপনার গাড়ির সাথে সবচেয়ে মানানসই ক্যাটাগরি সিলেক্ট করুন। সিলেক্ট করার পর নিচে অর্ডার সামারি দেখতে পাবেন।",
+      "summary-eyebrow": "অর্ডার সামারি",
+      "summary-title-ready": "বুকিং করতে প্রস্তুত",
+      "summary-title-selected": "আপনার বুকিং",
+      "summary-no-selection": "কোনো সার্ভিস সিলেক্ট করা হয়নি",
+      "summary-select-wash": "ওয়াশ সিলেক্ট করুন",
+      "summary-place-order": "অর্ডার করুন",
+      "overview-title": "বুকিং করার আগে সার্ভিসের বিস্তারিত তথ্য",
+      "overview-inc-title": "সার্ভিসের মধ্যে যা যা থাকছে:",
+      "overview-inc-1": "ফোম ওয়াশসহ গাড়ির সম্পূর্ণ এক্সটেরিয়র ডিপ ক্লিনিং",
+      "overview-inc-2": "অভিজ্ঞ টেকনিশিয়ান দ্বারা প্রফেশনাল সার্ভিস",
+      "overview-inc-3": "আপনার সুবিধাজনক সময়ে অন-টাইম সার্ভিস ডেলিভারি",
+      "overview-inc-4": "হোম সার্ভিস: আমাদের টিম সরাসরি আপনার দেওয়া ঠিকানায় চলে যাবে",
+      "overview-exc-title": "যা যা থাকছে না:",
+      "overview-exc-1": "অতিরিক্ত কোনো পার্টস বা উপকরণের প্রয়োজন হলে তার আলাদা খরচ",
+      "overview-exc-2": "টোল চার্জ (প্রযোজ্য ক্ষেত্রে)",
+      "overview-exc-3": "যাতায়াত খরচ (প্রযোজ্য ক্ষেত্রে)",
+      "overview-exc-4": "গাড়ির ধরন ও মডেলের ওপর ভিত্তি করে সার্ভিস চার্জ সামান্য কম-বেশি হতে পারে",
+      "overview-exp-title": "আমাদের থেকে যা পাবেন:",
+      "overview-exp-1": "বিশ্বস্ত ও অভিজ্ঞ কার ডিটেইলিং এক্সপার্ট",
+      "overview-exp-2": "সঠিক সময়ে কার কেয়ার সার্ভিসের নিশ্চয়তা",
+      "overview-keep-title": "মনে রাখুন:",
+      "overview-keep-desc": "পানি এবং বিদ্যুৎ সরবরাহের ব্যবস্থা গ্রাহককেই করতে হবে।",
+      "steps-eyebrow": "যেভাবে বুক করবেন",
+      "steps-title": "৩টি সহজ ধাপে আপনার কার ওয়াশ বুক করুন",
+      "order-step1-title": "১. সার্ভিস বেছে নিন",
+      "order-step1-desc": "তালিকা থেকে আপনার প্রয়োজনীয় সার্ভিসটি সিলেক্ট করুন।",
+      "order-step2-title": "২. সময় নির্ধারণ করুন",
+      "order-step2-desc": "আপনার সুবিধাজনক সময় ও তারিখ বেছে নিন।",
+      "order-step3-title": "৩. অর্ডার প্লেস করুন",
+      "order-step3-desc": "\"অর্ডার করুন\" বাটনে ক্লিক করে বুকিং কনফার্ম করুন।",
+      "hygiene-eyebrow": "স্বাস্থ্য ও পরিচ্ছন্নতা সতর্কতা",
+      "hygiene-title": "আপনার সুরক্ষায় আমরা শতভাগ সচেতন",
+      "hygiene-desc": "সার্ভিস দেওয়ার সময় আপনার সুরক্ষা ও পরিচ্ছন্নতা নিশ্চিত করতে আমাদের টিম সর্বদা সতর্ক। আমাদের সচেতনতামূলক পদক্ষেপগুলো:",
+      "hygiene-item-1": "প্রতিটি সার্ভিস স্পেশালিস্টের শারীরিক সুস্থতা নিশ্চিত করা",
+      "hygiene-item-2": "মাস্ক, গ্লাভস এবং হ্যান্ড স্যানিটাইজার ব্যবহার করা",
+      "hygiene-item-3": "কাজ শুরুর আগে ও পরে ওয়াশ করার সরঞ্জামগুলো ভালোভাবে জীবাণুমুক্ত করা",
+      "hygiene-item-4": "সার্ভিস দেওয়ার সময় নিরাপদ দূরত্ব বজায় রাখা",
+      "faq-eyebrow": "জিজ্ঞাসা",
+      "faq-title": "বুকিং নিয়ে সাধারণ কিছু প্রশ্নোত্তর",
+      "faq-q-1": "আমাকে কি বাড়তি কোনো পার্টস বা যন্ত্রাংশ কিনতে হবে?",
+      "faq-a-1": "না, সাধারণত কোনো পার্টস কেনার প্রয়োজন হয় না। তবে কোনো অতিরিক্ত পার্টস লাগলে আমাদের টেকনিশিয়ান তা কিনে দিতে পারবেন। অথবা আপনি নিজেও পার্টস কিনে রাখতে পারেন, সেক্ষেত্রে শুধুমাত্র টেকনিশিয়ানের সার্ভিস ফি প্রদান করলেই হবে।",
+      "faq-q-2": "টেকনিশিয়ানের বাসায় পৌঁছাতে কতক্ষণ সময় লাগবে?",
+      "faq-a-2": "বুকিং কনফার্ম হওয়ার পর সাধারণত ৩০ মিনিটের মধ্যেই আমাদের টিম আপনার ঠিকানায় পৌঁছে যাবে।",
+      "footer-desc": "আপনার দোরগোড়ায় প্রিমিয়াম কার ওয়াশ সার্ভিস",
+      "footer-area": "সার্ভিস এরিয়া: ঢাকা এবং আশেপাশের এলাকা",
+      "footer-rights": "গাড়িঘর। সর্বস্বত্ব সংরক্ষিত।",
+      "label-selected": "নির্বাচিত",
+      "btn-add": "যোগ করুন",
+      "btn-added": "যোগ করা হয়েছে",
+      "theme-toggle-dark": "ডার্ক মোড",
+      "theme-toggle-light": "লাইট মোড",
+      "mobile-selected-service": "নির্বাচিত সার্ভিস"
+    }
+  }
+}
